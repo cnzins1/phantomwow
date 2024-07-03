@@ -1,7 +1,7 @@
 if game.GameId == 113491250 then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Mick-gordon/Hyper-Escape/main/HyperEscapePhantomForces.lua", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/cnzins1/phantomwow/main/second", true))()
 else
-	local HyperEscape = { -- fuck Off I Like It, Even Tho It Is Anoying.
+	local testing = {
 		GUI = {
 			GUIButton = true;
 			GUIToggleKey = Enum.KeyCode.RightShift;
@@ -1385,54 +1385,54 @@ else
 
 	local testLib = library();
 
-	local Window = testLib:CreateWindow(HyperEscape.GUI.GUIToggleKey, "test");
+	local Window = testLib:CreateWindow(testing.GUI.GUIToggleKey, "test");
 	local UIToggle = Window:CreateToggleButton()
 
 	local AimBotTab = Window:CreateTab("Aim Bot");
 	local MainSector = AimBotTab:CreateSector("Main", "Left");
-	MainSector:CreateToggle("Enable", HyperEscape.AimBot.Enabled, function(AE) HyperEscape.AimBot.Enabled = AE; end);
-	MainSector:CreateToggle("Team Check", HyperEscape.AimBot.TeamCheck, function(ATC) HyperEscape.AimBot.TeamCheck = ATC; end);
-	MainSector:CreateToggle("Wall Check", HyperEscape.AimBot.WallCheck, function(AWC) HyperEscape.AimBot.WallCheck = AWC ;end);
-	MainSector:CreateDropDown("Hit Scan", {"Head", "HumanoidRootPart"}, HyperEscape.AimBot.AimPart, false, function(AHS) HyperEscape.AimBot.AimPart = AHS; end);
+	MainSector:CreateToggle("Enable", testing.AimBot.Enabled, function(AE) testing.AimBot.Enabled = AE; end);
+	MainSector:CreateToggle("Team Check", testing.AimBot.TeamCheck, function(ATC) testing.AimBot.TeamCheck = ATC; end);
+	MainSector:CreateToggle("Wall Check", testing.AimBot.WallCheck, function(AWC) testing.AimBot.WallCheck = AWC ;end);
+	MainSector:CreateDropDown("Hit Scan", {"Head", "HumanoidRootPart"}, testing.AimBot.AimPart, false, function(AHS) testing.AimBot.AimPart = AHS; end);
 
 	local FovSecor = AimBotTab:CreateSector("FOV Circle", "Left");
-	FovSecor:CreateToggle("Show Fov", HyperEscape.AimBot.ShowFov, function(AFE) HyperEscape.AimBot.ShowFov = AFE; end);
-	FovSecor:CreateSlider("Circle Radius", 0, HyperEscape.AimBot.Fov, 1500, 1, function(FCR) HyperEscape.AimBot.Fov = FCR; end);
+	FovSecor:CreateToggle("Show Fov", testing.AimBot.ShowFov, function(AFE) testing.AimBot.ShowFov = AFE; end);
+	FovSecor:CreateSlider("Circle Radius", 0, testing.AimBot.Fov, 1500, 1, function(FCR) testing.AimBot.Fov = FCR; end);
 
 	local OtherSector = AimBotTab:CreateSector("Other", "Right");
-	OtherSector:CreateToggle("Prediction", HyperEscape.AimBot.Prediction, function(APE) HyperEscape.AimBot.Prediction = APE; end);
-	OtherSector:CreateSlider("Prediction Ammount", 100, HyperEscape.AimBot.PredictionAmmount * 100, 1000, 1, function(APA) HyperEscape.AimBot.PredictionAmmount = APA / 100; end);
-	OtherSector:CreateToggle("Sticky Aim", HyperEscape.AimBot.StickyAim, function(ASAE) HyperEscape.AimBot.StickyAim = ASAE; end);
-	OtherSector:CreateSlider("Smoothing", 3, HyperEscape.AimBot.Smoothing * 100, 50, 1, function(AS) HyperEscape.AimBot.Smoothing = AS / 100; end);
-	OtherSector:CreateKeyBind("Key Bind", HyperEscape.AimBot.Keybind, function(AK) HyperEscape.AimBot.Keybind = AK; end);
-	OtherSector:CreateToggle("Use Mouse", HyperEscape.AimBot.UseMouse, function(AUM) HyperEscape.AimBot.UseMouse = AUM; end);
-	OtherSector:CreateDropDown("Mouse Bind", {"MouseButton1", "MouseButton2"}, HyperEscape.AimBot.MouseBind, false, function(AMB) HyperEscape.AimBot.MouseBind = AMB; end);
+	OtherSector:CreateToggle("Prediction", testing.AimBot.Prediction, function(APE) testing.AimBot.Prediction = APE; end);
+	OtherSector:CreateSlider("Prediction Ammount", 100, testing.AimBot.PredictionAmmount * 100, 1000, 1, function(APA) testing.AimBot.PredictionAmmount = APA / 100; end);
+	OtherSector:CreateToggle("Sticky Aim", testing.AimBot.StickyAim, function(ASAE) testing.AimBot.StickyAim = ASAE; end);
+	OtherSector:CreateSlider("Smoothing", 3, testing.AimBot.Smoothing * 100, 50, 1, function(AS) testing.AimBot.Smoothing = AS / 100; end);
+	OtherSector:CreateKeyBind("Key Bind", testing.AimBot.Keybind, function(AK) testing.AimBot.Keybind = AK; end);
+	OtherSector:CreateToggle("Use Mouse", testing.AimBot.UseMouse, function(AUM) testing.AimBot.UseMouse = AUM; end);
+	OtherSector:CreateDropDown("Mouse Bind", {"MouseButton1", "MouseButton2"}, testing.AimBot.MouseBind, false, function(AMB) testing.AimBot.MouseBind = AMB; end);
 
 	local ESPTab = Window:CreateTab("ESP");
 	local EnableSector = ESPTab:CreateSector("ESP", "Left");
-	EnableSector:CreateToggle("Enable", HyperEscape.esp.Enabled, function(EE) HyperEscape.esp.Enabled = EE; end);
-	EnableSector:CreateToggle("Team Check", HyperEscape.esp.Box.TeamCheck, function(ETC) HyperEscape.esp.TeamCheck = ETC; end);
-	EnableSector:CreateToggle("Box", HyperEscape.esp.Box.Box, function(EB) HyperEscape.esp.Box.Box = EB; end);
-	EnableSector:CreateToggle("Tracer", HyperEscape.esp.Tracer.Tracer, function(ET) HyperEscape.esp.Tracer.Tracer = ET; end);
-	EnableSector:CreateToggle("Health", HyperEscape.esp.Box.Health, function(EH) HyperEscape.esp.Box.Health = EH; end);
-	EnableSector:CreateToggle("Name", HyperEscape.esp.Box.Name, function(EN) HyperEscape.esp.Box.Name = EN; end);
-	EnableSector:CreateToggle("Distance", HyperEscape.esp.Box.Distance, function(ED) HyperEscape.esp.Box.Distance = ED; end);
-	EnableSector:CreateToggle("Health Bar", HyperEscape.esp.Box.HealthBar, function(EHB) HyperEscape.esp.Box.HealthBar = EHB; end);
+	EnableSector:CreateToggle("Enable", testing.esp.Enabled, function(EE) testing.esp.Enabled = EE; end);
+	EnableSector:CreateToggle("Team Check", testing.esp.Box.TeamCheck, function(ETC) testing.esp.TeamCheck = ETC; end);
+	EnableSector:CreateToggle("Box", testing.esp.Box.Box, function(EB) testing.esp.Box.Box = EB; end);
+	EnableSector:CreateToggle("Tracer", testing.esp.Tracer.Tracer, function(ET) testing.esp.Tracer.Tracer = ET; end);
+	EnableSector:CreateToggle("Health", testing.esp.Box.Health, function(EH) testing.esp.Box.Health = EH; end);
+	EnableSector:CreateToggle("Name", testing.esp.Box.Name, function(EN) testing.esp.Box.Name = EN; end);
+	EnableSector:CreateToggle("Distance", testing.esp.Box.Distance, function(ED) testing.esp.Box.Distance = ED; end);
+	EnableSector:CreateToggle("Health Bar", testing.esp.Box.HealthBar, function(EHB) testing.esp.Box.HealthBar = EHB; end);
 	if not IsArsenal then
-		EnableSector:CreateToggle("Hilights", HyperEscape.esp.Hilights.Hilights, function(EHi) HyperEscape.esp.Hilights.Hilights = EHi; end);
-		EnableSector:CreateToggle("Show Hilight Through Walls", HyperEscape.esp.Hilights.AllWaysVisible, function(ESHTW) HyperEscape.esp.Hilights.AllWaysVisible = ESHTW; end);
+		EnableSector:CreateToggle("Hilights", testing.esp.Hilights.Hilights, function(EHi) testing.esp.Hilights.Hilights = EHi; end);
+		EnableSector:CreateToggle("Show Hilight Through Walls", testing.esp.Hilights.AllWaysVisible, function(ESHTW) testing.esp.Hilights.AllWaysVisible = ESHTW; end);
 	end
 
 	local ESPSettingsSecor = ESPTab:CreateSector("Settings", "Right");
-	ESPSettingsSecor:CreateSlider("Max Distance", 0, HyperEscape.esp.MaxDistance, 4000, 1, function(EMD) HyperEscape.esp.MaxDistance = EMD; end);
-	ESPSettingsSecor:CreateToggle("Outlines", HyperEscape.esp.Box.Outline, function(ESO) HyperEscape.esp.Box.Outline = ESO; HyperEscape.esp.Tracer.Outline = ESO; end);
-	ESPSettingsSecor:CreateColorPicker("Outline Color", HyperEscape.esp.Box.OutlineColor, function(EOC) HyperEscape.esp.Box.OutlineColor = EOC; HyperEscape.esp.Tracer.OutlineColor = EOC; end);
-	ESPSettingsSecor:CreateColorPicker("ESP Color", HyperEscape.esp.Box.Color, function(EEC) HyperEscape.esp.Box.Color = EEC; HyperEscape.esp.Tracer.Color = EEC; end);
+	ESPSettingsSecor:CreateSlider("Max Distance", 0, testing.esp.MaxDistance, 4000, 1, function(EMD) testing.esp.MaxDistance = EMD; end);
+	ESPSettingsSecor:CreateToggle("Outlines", testing.esp.Box.Outline, function(ESO) testing.esp.Box.Outline = ESO; testing.esp.Tracer.Outline = ESO; end);
+	ESPSettingsSecor:CreateColorPicker("Outline Color", testing.esp.Box.OutlineColor, function(EOC) testing.esp.Box.OutlineColor = EOC; testing.esp.Tracer.OutlineColor = EOC; end);
+	ESPSettingsSecor:CreateColorPicker("ESP Color", testing.esp.Box.Color, function(EEC) testing.esp.Box.Color = EEC; testing.esp.Tracer.Color = EEC; end);
 	if not IsArsenal then
-		ESPSettingsSecor:CreateColorPicker("Hilight Outline", HyperEscape.esp.Hilights.OutlineColor, function(EOCC) HyperEscape.esp.Hilights.OutlineColor = EOCC; end);
-		ESPSettingsSecor:CreateColorPicker("Hilight Fill", HyperEscape.esp.Hilights.FillColor, function(EFCC) HyperEscape.esp.Hilights.FillColor = EFCC; end);
-		ESPSettingsSecor:CreateSlider("Hilight Outline", 0, HyperEscape.esp.Hilights.OutlineTransparency * 100, 100, 1, function(EHOT) HyperEscape.esp.Hilights.OutlineTransparency = EHOT / 100; end);
-		ESPSettingsSecor:CreateSlider("Hilight Fill", 0, HyperEscape.esp.Hilights.FillTransparency * 100, 100, 1, function(EHFT) HyperEscape.esp.Hilights.FillTransparency = EHFT / 100; end);
+		ESPSettingsSecor:CreateColorPicker("Hilight Outline", testing.esp.Hilights.OutlineColor, function(EOCC) testing.esp.Hilights.OutlineColor = EOCC; end);
+		ESPSettingsSecor:CreateColorPicker("Hilight Fill", testing.esp.Hilights.FillColor, function(EFCC) testing.esp.Hilights.FillColor = EFCC; end);
+		ESPSettingsSecor:CreateSlider("Hilight Outline", 0, testing.esp.Hilights.OutlineTransparency * 100, 100, 1, function(EHOT) testing.esp.Hilights.OutlineTransparency = EHOT / 100; end);
+		ESPSettingsSecor:CreateSlider("Hilight Fill", 0, testing.esp.Hilights.FillTransparency * 100, 100, 1, function(EHFT) testing.esp.Hilights.FillTransparency = EHFT / 100; end);
 	end
 
 	local SettingsTab = Window:CreateTab("Settings");
@@ -1440,13 +1440,13 @@ else
 	SettingsTab:CreateConfig("Right");
 
 	local SettingsSettings = SettingsTab:CreateSector("GUI Settigns", "Left");
-	SettingsSettings:CreateToggle("UI Toggle Button", HyperEscape.GUI.GUIButton, function(GUITB) HyperEscape.GUI.GUIButton = GUITB; UIToggle:Update(GUITB); end);
-	SettingsSettings:CreateKeyBind("UI Key Bind", HyperEscape.GUI.GUIToggleKey, function(SUITK) HyperEscape.GUI.GUIToggleKey = SUITK; Window:UpdateKeyBind(SUITK); end);
+	SettingsSettings:CreateToggle("UI Toggle Button", testing.GUI.GUIButton, function(GUITB) testing.GUI.GUIButton = GUITB; UIToggle:Update(GUITB); end);
+	SettingsSettings:CreateKeyBind("UI Key Bind", testing.GUI.GUIToggleKey, function(SUITK) testing.GUI.GUIToggleKey = SUITK; Window:UpdateKeyBind(SUITK); end);
 
 
 	local ESPHolder = Instance.new("Folder", (CoreGui or localPlayer.PlayerGui)); 
 	local Fov = Instance.new("ScreenGui",(CoreGui or localPlayer.PlayerGui))Fov.Name = "Fov" Fov.ZIndexBehavior = Enum.ZIndexBehavior.Sibling Fov.ResetOnSpawn = false; -- Yapee
-	local FOVFFrame = Instance.new("Frame")FOVFFrame.Parent = Fov FOVFFrame.Name = "FOVFFrame" FOVFFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) FOVFFrame.BorderColor3 = Color3.fromRGB(0, 0, 0) FOVFFrame.BorderSizePixel = 0 FOVFFrame.BackgroundTransparency = 1 FOVFFrame.AnchorPoint = Vector2.new(0.5, 0.5) FOVFFrame.Position = UDim2.new(0.5, 0,0.5, 0) FOVFFrame.Size = UDim2.new(0, HyperEscape.AimBot.Fov, 0, HyperEscape.AimBot.Fov) FOVFFrame.BackgroundTransparency = 1;
+	local FOVFFrame = Instance.new("Frame")FOVFFrame.Parent = Fov FOVFFrame.Name = "FOVFFrame" FOVFFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) FOVFFrame.BorderColor3 = Color3.fromRGB(0, 0, 0) FOVFFrame.BorderSizePixel = 0 FOVFFrame.BackgroundTransparency = 1 FOVFFrame.AnchorPoint = Vector2.new(0.5, 0.5) FOVFFrame.Position = UDim2.new(0.5, 0,0.5, 0) FOVFFrame.Size = UDim2.new(0, testing.AimBot.Fov, 0, testing.AimBot.Fov) FOVFFrame.BackgroundTransparency = 1;
 	local UICorner = Instance.new("UICorner")UICorner.CornerRadius = UDim.new(1, 0) UICorner.Parent = FOVFFrame;
 	local UIStroke = Instance.new("UIStroke")UIStroke.Color = Color3.fromRGB(100,0,100) UIStroke.Parent = FOVFFrame UIStroke.Thickness = 1 UIStroke.ApplyStrokeMode = "Border"; game:GetService("StarterGui"):SetCore("SendNotification", {Title = "https://discord.gg/FsApQ7YNTq", Text = "The Discord For More!"});
 
@@ -1466,7 +1466,7 @@ else
 
 	function isVisible(p, ...)
 
-		if not (HyperEscape.AimBot.WallCheck == true) then
+		if not (testing.AimBot.WallCheck == true) then
 			return true;
 		end
 
@@ -1474,17 +1474,17 @@ else
 	end
 
 	function CameraGetClosestToMouse()
-		local AimFov = HyperEscape.AimBot.Fov;
+		local AimFov = testing.AimBot.Fov;
 		local targetPos = nil;
 
 		for i,v in pairs (game:GetService("Players"):GetPlayers()) do
 			if v ~= localPlayer then
-				if HyperEscape.AimBot.TeamCheck ~= true or GetTeam(v) ~= GetTeam(localPlayer) then 
+				if testing.AimBot.TeamCheck ~= true or GetTeam(v) ~= GetTeam(localPlayer) then 
 					if IsAlive(v) then
-						local screen_pos, on_screen = CurrentCamera:WorldToViewportPoint(v.Character[HyperEscape.AimBot.AimPart].Position)
+						local screen_pos, on_screen = CurrentCamera:WorldToViewportPoint(v.Character[testing.AimBot.AimPart].Position)
 						local screen_pos_2D = Vector2.new(screen_pos.X, screen_pos.Y)
 						local new_magnitude = (screen_pos_2D - mouseLocation(UIS)).Magnitude
-						if on_screen and new_magnitude < AimFov and isVisible(v.Character[HyperEscape.AimBot.AimPart].Position, v.Character.Head.Parent) then
+						if on_screen and new_magnitude < AimFov and isVisible(v.Character[testing.AimBot.AimPart].Position, v.Character.Head.Parent) then
 							AimFov = new_magnitude;
 							targetPos = v;
 						end
@@ -1510,42 +1510,42 @@ else
 		HilightHolder.Name = "Hilight"
 
 		local LeftOutline = Instance.new("Frame", BoxHolder);
-		LeftOutline.BackgroundColor3 = HyperEscape.esp.Box.OutlineColor;
+		LeftOutline.BackgroundColor3 = testing.esp.Box.OutlineColor;
 		LeftOutline.Visible = false;
 		LeftOutline.BorderSizePixel = 1;
 
 		local RightOutline = Instance.new("Frame", BoxHolder);
-		RightOutline.BackgroundColor3 = HyperEscape.esp.Box.OutlineColor;
+		RightOutline.BackgroundColor3 = testing.esp.Box.OutlineColor;
 		RightOutline.Visible = false;
 		RightOutline.BorderSizePixel = 1;
 
 		local TopOutline = Instance.new("Frame", BoxHolder);
-		TopOutline.BackgroundColor3 = HyperEscape.esp.Box.OutlineColor;
+		TopOutline.BackgroundColor3 = testing.esp.Box.OutlineColor;
 		TopOutline.Visible = false;
 		TopOutline.BorderSizePixel = 1;
 
 		local BottomOutline = Instance.new("Frame", BoxHolder);
-		BottomOutline.BackgroundColor3 = HyperEscape.esp.Box.OutlineColor;
+		BottomOutline.BackgroundColor3 = testing.esp.Box.OutlineColor;
 		BottomOutline.Visible = false;
 		BottomOutline.BorderSizePixel = 1;
 
 		local Left = Instance.new("Frame", BoxHolder);
-		Left.BackgroundColor3 = HyperEscape.esp.Box.Color;
+		Left.BackgroundColor3 = testing.esp.Box.Color;
 		Left.Visible = false;
 		Left.BorderSizePixel = 0;
 
 		local Right = Instance.new("Frame", BoxHolder);
-		Right.BackgroundColor3 = HyperEscape.esp.Box.Color;
+		Right.BackgroundColor3 = testing.esp.Box.Color;
 		Right.Visible = false;
 		Right.BorderSizePixel = 0;
 
 		local Top = Instance.new("Frame", BoxHolder);
-		Top.BackgroundColor3 = HyperEscape.esp.Box.Color;
+		Top.BackgroundColor3 = testing.esp.Box.Color;
 		Top.Visible = false;
 		Top.BorderSizePixel = 0;
 
 		local Bottom = Instance.new("Frame", BoxHolder);
-		Bottom.BackgroundColor3 = HyperEscape.esp.Box.Color;
+		Bottom.BackgroundColor3 = testing.esp.Box.Color;
 		Bottom.Visible = false;
 		Bottom.BorderSizePixel = 0;
 
@@ -1574,7 +1574,7 @@ else
 		local HealthBackground = Instance.new("Frame", BoxHolder);
 		HealthBackground.Visible = false;
 		HealthBackground.BorderSizePixel = 1;
-		HealthBackground.BorderColor3 = HyperEscape.esp.Box.OutlineColor;
+		HealthBackground.BorderColor3 = testing.esp.Box.OutlineColor;
 
 		local HealthBar = Instance.new("Frame", BoxHolder);
 		HealthBar.Visible = false;
@@ -1596,13 +1596,13 @@ else
 		-- Tracer 
 
 		local TracerOutline = Instance.new("Frame", TracerHolder);
-		TracerOutline.BackgroundColor3 = HyperEscape.esp.Tracer.OutlineColor;
+		TracerOutline.BackgroundColor3 = testing.esp.Tracer.OutlineColor;
 		TracerOutline.Visible = false;
 		TracerOutline.BorderSizePixel = 1;
 		TracerOutline.AnchorPoint = Vector2.new(0.5, 0.5);
 
 		local Tracer = Instance.new("Frame", TracerHolder);
-		Tracer.BackgroundColor3 = HyperEscape.esp.Tracer.Color;
+		Tracer.BackgroundColor3 = testing.esp.Tracer.Color;
 		Tracer.Visible = false;
 		Tracer.BorderSizePixel = 0;
 		Tracer.AnchorPoint = Vector2.new(0.5, 0.5);
@@ -1614,23 +1614,23 @@ else
 
 		local co = coroutine.create(function()
 			game:GetService("RunService").RenderStepped:Connect(function()
-				if IsAlive(Player) and (HyperEscape.esp.Box.Box or HyperEscape.esp.Box.HealthBar or HyperEscape.esp.Box.Name or HyperEscape.esp.Box.Health or HyperEscape.esp.Tracer.Tracer or HyperEscape.esp.Hilights.Hilights) then
+				if IsAlive(Player) and (testing.esp.Box.Box or testing.esp.Box.HealthBar or testing.esp.Box.Name or testing.esp.Box.Health or testing.esp.Tracer.Tracer or testing.esp.Hilights.Hilights) then
 					local screen, onScreen = CurrentCamera:WorldToScreenPoint(Player.Character.HumanoidRootPart.Position); 
 					local frustumHeight = math.tan(math.rad(CurrentCamera.FieldOfView * 0.5)) * 2 * screen.Z ; -- Thank you mickeydev, Join .gg/lunarity for the best paid script hub for fps games made by known and trusted developers. 
-					local size = CurrentCamera.ViewportSize.Y / frustumHeight * HyperEscape.esp.CharacterSize;
+					local size = CurrentCamera.ViewportSize.Y / frustumHeight * testing.esp.CharacterSize;
 					local position = Vector2.new(screen.X, screen.Y) - (size / 2 - Vector2.new(0, size.Y) / 20);
 
-					if onScreen and (HyperEscape.esp.TeamCheck ~= true  or GetTeam(Player) ~= GetTeam(localPlayer)) and HyperEscape.esp.Enabled then	
+					if onScreen and (testing.esp.TeamCheck ~= true  or GetTeam(Player) ~= GetTeam(localPlayer)) and testing.esp.Enabled then	
 						local DistanceNumb = math.floor(0.5+(CurrentCamera.CFrame.Position - Player.Character.HumanoidRootPart.Position).magnitude);
-						if HyperEscape.esp.MaxDistance > DistanceNumb then
+						if testing.esp.MaxDistance > DistanceNumb then
 							-- Box
 
-							if HyperEscape.esp.Box.Box then
+							if testing.esp.Box.Box then
 
-								LeftOutline.Visible = HyperEscape.esp.Box.Box and HyperEscape.esp.Box.Outline;
-								RightOutline.Visible =  HyperEscape.esp.Box.Box and HyperEscape.esp.Box.Outline;
-								TopOutline.Visible =  HyperEscape.esp.Box.Box and HyperEscape.esp.Box.Outline;
-								BottomOutline.Visible =  HyperEscape.esp.Box.Box and HyperEscape.esp.Box.Outline;
+								LeftOutline.Visible = testing.esp.Box.Box and testing.esp.Box.Outline;
+								RightOutline.Visible =  testing.esp.Box.Box and testing.esp.Box.Outline;
+								TopOutline.Visible =  testing.esp.Box.Box and testing.esp.Box.Outline;
+								BottomOutline.Visible =  testing.esp.Box.Box and testing.esp.Box.Outline;
 
 								Left.Position = UDim2.fromOffset(position.X, position.Y);
 								Right.Position = UDim2.fromOffset(position.X, position.Y + size.Y - 1);
@@ -1642,10 +1642,10 @@ else
 								TopOutline.Position =  Top.Position;
 								BottomOutline.Position =  Bottom.Position;
 
-								Left.Visible = HyperEscape.esp.Box.Box;
-								Right.Visible =  HyperEscape.esp.Box.Box;
-								Top.Visible =  HyperEscape.esp.Box.Box;
-								Bottom.Visible =  HyperEscape.esp.Box.Box;
+								Left.Visible = testing.esp.Box.Box;
+								Right.Visible =  testing.esp.Box.Box;
+								Top.Visible =  testing.esp.Box.Box;
+								Bottom.Visible =  testing.esp.Box.Box;
 
 								Left.Size = UDim2.fromOffset(size.X, 1);
 								Right.Size = UDim2.fromOffset(size.X, 1);
@@ -1657,19 +1657,19 @@ else
 								TopOutline.Size = Top.Size;
 								BottomOutline.Size = Bottom.Size;
 
-								LeftOutline.BorderColor3 = HyperEscape.esp.Box.OutlineColor;
-								RightOutline.BorderColor3 =  HyperEscape.esp.Box.OutlineColor;
-								TopOutline.BorderColor3 =  HyperEscape.esp.Box.OutlineColor;
-								BottomOutline.BorderColor3 =  HyperEscape.esp.Box.OutlineColor;
+								LeftOutline.BorderColor3 = testing.esp.Box.OutlineColor;
+								RightOutline.BorderColor3 =  testing.esp.Box.OutlineColor;
+								TopOutline.BorderColor3 =  testing.esp.Box.OutlineColor;
+								BottomOutline.BorderColor3 =  testing.esp.Box.OutlineColor;
 
-								Left.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								Right.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								Top.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								Bottom.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								LeftOutline.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								RightOutline.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								TopOutline.BackgroundColor3 = HyperEscape.esp.Box.Color;
-								BottomOutline.BackgroundColor3 = HyperEscape.esp.Box.Color;
+								Left.BackgroundColor3 = testing.esp.Box.Color;
+								Right.BackgroundColor3 = testing.esp.Box.Color;
+								Top.BackgroundColor3 = testing.esp.Box.Color;
+								Bottom.BackgroundColor3 = testing.esp.Box.Color;
+								LeftOutline.BackgroundColor3 = testing.esp.Box.Color;
+								RightOutline.BackgroundColor3 = testing.esp.Box.Color;
+								TopOutline.BackgroundColor3 = testing.esp.Box.Color;
+								BottomOutline.BackgroundColor3 = testing.esp.Box.Color;
 							else
 								LeftOutline.Visible = false;
 								RightOutline.Visible =  false;
@@ -1681,14 +1681,14 @@ else
 								Bottom.Visible =  false;
 							end
 
-							if HyperEscape.esp.Box.HealthBar then
+							if testing.esp.Box.HealthBar then
 
 								local health = (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
 								local healthScale = (IsArsenal and health / players[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
 								local healthSizeY = size.Y * healthScale;
 
-								HealthBackground.Visible = HyperEscape.esp.Box.HealthBar;
-								HealthBar.Visible = HyperEscape.esp.Box.HealthBar;
+								HealthBackground.Visible = testing.esp.Box.HealthBar;
+								HealthBar.Visible = testing.esp.Box.HealthBar;
 
 								HealthBackground.Size = UDim2.fromOffset(4, size.Y);
 								HealthBar.Size = UDim2.fromOffset(2, -healthSizeY);
@@ -1696,22 +1696,22 @@ else
 								HealthBackground.Position = UDim2.fromOffset(position.X - 8, position.Y); 
 								HealthBar.Position = UDim2.fromOffset(position.x - 7, position.y + size.Y);
 
-								HealthBackground.BackgroundColor3 = HyperEscape.esp.Box.OutlineColor;
-								HealthBackground.BorderColor3 = HyperEscape.esp.Box.OutlineColor;
+								HealthBackground.BackgroundColor3 = testing.esp.Box.OutlineColor;
+								HealthBackground.BorderColor3 = testing.esp.Box.OutlineColor;
 							else
 								HealthBackground.Visible = false;
 								HealthBar.Visible = false;
 							end
 
-							if HyperEscape.esp.Box.Health then
+							if testing.esp.Box.Health then
 
 								local health = (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
 								local healthScale = (IsArsenal and health / players[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
 								local healthSizeY = size.Y * healthScale;
 
-								Health.Visible = HyperEscape.esp.Box.Health;
+								Health.Visible = testing.esp.Box.Health;
 
-								Health.Position = (HyperEscape.esp.Box.HealthBar and UDim2.fromOffset(position.X - 25, position.y + size.Y + -healthSizeY) or UDim2.fromOffset(position.X - 25, position.Y + size.Y));
+								Health.Position = (testing.esp.Box.HealthBar and UDim2.fromOffset(position.X - 25, position.y + size.Y + -healthSizeY) or UDim2.fromOffset(position.X - 25, position.Y + size.Y));
 
 								Health.Text = (IsArsenal and math.floor(players[Player.Character.Name].NRPBS["Health"].Value) or math.floor(Player.Character.Humanoid.Health));
 							else
@@ -1720,16 +1720,16 @@ else
 
 							-- Distance
 
-							if HyperEscape.esp.Box.Distance or HyperEscape.esp.Box.Name then
+							if testing.esp.Box.Distance or testing.esp.Box.Name then
 
-								Name.Visible = HyperEscape.esp.Box.Name;
-								Distance.Visible = HyperEscape.esp.Box.Distance and not HyperEscape.esp.Box.Name;
+								Name.Visible = testing.esp.Box.Name;
+								Distance.Visible = testing.esp.Box.Distance and not testing.esp.Box.Name;
 
 								Name.Position = UDim2.fromOffset(screen.X, screen.Y - (size.Y + Name.TextBounds.Y + 14) / 2);
 								Distance.Position = UDim2.fromOffset(screen.X, screen.Y - (size.Y + Name.TextBounds.Y + 14) / 2);
 
 								Distance.Text = math.floor(0.5+(CurrentCamera.CFrame.Position - Player.Character.HumanoidRootPart.Position).magnitude);
-								Name.Text = (HyperEscape.esp.Box.Name and HyperEscape.esp.Box.Distance and Player.Name .. " [" .. math.floor(0.5+(CurrentCamera.CFrame.Position - Player.Character.HumanoidRootPart.Position).magnitude / 3.5714285714) .. "]" or Player.Name);
+								Name.Text = (testing.esp.Box.Name and testing.esp.Box.Distance and Player.Name .. " [" .. math.floor(0.5+(CurrentCamera.CFrame.Position - Player.Character.HumanoidRootPart.Position).magnitude / 3.5714285714) .. "]" or Player.Name);
 
 							else
 								Name.Visible = false;
@@ -1738,14 +1738,14 @@ else
 
 							-- Tracer
 
-							if HyperEscape.esp.Tracer.Tracer then
+							if testing.esp.Tracer.Tracer then
 
 								local ScreenVec2 = Vector2.new(screen.X, screen.Y + size.Y / 2 + size.Y / 20);
 								local Origin = Vector2.new(CurrentCamera.ViewportSize.X/2, CurrentCamera.ViewportSize.Y - 1);
 								local TracerPosition = (Origin + ScreenVec2) / 2;
 
-								TracerOutline.Visible = HyperEscape.esp.Tracer.Outline and HyperEscape.esp.Tracer.Tracer;
-								Tracer.Visible = HyperEscape.esp.Tracer.Tracer;
+								TracerOutline.Visible = testing.esp.Tracer.Outline and testing.esp.Tracer.Tracer;
+								Tracer.Visible = testing.esp.Tracer.Tracer;
 
 								Tracer.Rotation = math.deg(math.atan2(ScreenVec2.Y - Origin.Y, ScreenVec2.X - Origin.X));
 								Tracer.Position = UDim2.new(0, TracerPosition.X, 0, TracerPosition.Y);
@@ -1755,8 +1755,8 @@ else
 								TracerOutline.Position = Tracer.Position;
 								TracerOutline.Size = Tracer.Size;
 
-								TracerOutline.BorderColor3 = HyperEscape.esp.Tracer.OutlineColor;
-								Tracer.BackgroundColor3 = HyperEscape.esp.Tracer.Color;
+								TracerOutline.BorderColor3 = testing.esp.Tracer.OutlineColor;
+								Tracer.BackgroundColor3 = testing.esp.Tracer.Color;
 
 							else
 								TracerOutline.Visible = false;
@@ -1765,21 +1765,21 @@ else
 
 							-- Hilight 
 
-							if HyperEscape.esp.Hilights.Hilights then
+							if testing.esp.Hilights.Hilights then
 
-								Hilight.Enabled = HyperEscape.esp.Hilights.Hilights;
+								Hilight.Enabled = testing.esp.Hilights.Hilights;
 
 								if not IsArsenal then
 									Hilight.Adornee = Player.Character;
 								end
 
-								Hilight.OutlineColor = HyperEscape.esp.Hilights.OutlineColor;
-								Hilight.FillColor = HyperEscape.esp.Hilights.FillColor;
+								Hilight.OutlineColor = testing.esp.Hilights.OutlineColor;
+								Hilight.FillColor = testing.esp.Hilights.FillColor;
 
-								Hilight.FillTransparency = HyperEscape.esp.Hilights.FillTransparency;
-								Hilight.OutlineTransparency = HyperEscape.esp.Hilights.OutlineTransparency;
+								Hilight.FillTransparency = testing.esp.Hilights.FillTransparency;
+								Hilight.OutlineTransparency = testing.esp.Hilights.OutlineTransparency;
 
-								Hilight.DepthMode = (HyperEscape.esp.Hilights.AllWaysVisible and "AlwaysOnTop" or not HyperEscape.esp.Hilights.AllWaysVisible and "Occluded");
+								Hilight.DepthMode = (testing.esp.Hilights.AllWaysVisible and "AlwaysOnTop" or not testing.esp.Hilights.AllWaysVisible and "Occluded");
 							else
 								Hilight.Enabled = false;
 								Hilight.Adornee = nil;
@@ -1869,96 +1869,96 @@ else
 
 
 	UIS.InputBegan:Connect(function(Key)
-		if Key.KeyCode == HyperEscape.AimBot.Keybind and not HyperEscape.AimBot.UseMouse then
-			HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-			HyperEscape.AimBot.IsAimKeyDown = true;
+		if Key.KeyCode == testing.AimBot.Keybind and not testing.AimBot.UseMouse then
+			testing.AimBot.Target = CameraGetClosestToMouse();
+			testing.AimBot.IsAimKeyDown = true;
 		end
 	end)
 	UIS.InputEnded:Connect(function(Key)
-		if Key.KeyCode == HyperEscape.AimBot.Keybind and not HyperEscape.AimBot.UseMouse then
-			HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-			HyperEscape.AimBot.IsAimKeyDown = false;
-			if HyperEscape.AimBot.CameraTween ~= nil then
-				HyperEscape.AimBot.CameraTween:Cancel();
+		if Key.KeyCode == testing.AimBot.Keybind and not testing.AimBot.UseMouse then
+			testing.AimBot.Target = CameraGetClosestToMouse();
+			testing.AimBot.IsAimKeyDown = false;
+			if testing.AimBot.CameraTween ~= nil then
+				testing.AimBot.CameraTween:Cancel();
 			end
 		end
 	end)
 
 	localPlayer:GetMouse().Button1Down:Connect(function(Key)
-		if HyperEscape.AimBot.MouseBind == "MouseButton1" and HyperEscape.AimBot.UseMouse then
-			if HyperEscape.AimBot.IsAimKeyDown then
-				HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-				HyperEscape.AimBot.IsAimKeyDown = false;
-				if HyperEscape.AimBot.CameraTween ~= nil then
-					HyperEscape.AimBot.CameraTween:Cancel();
+		if testing.AimBot.MouseBind == "MouseButton1" and testing.AimBot.UseMouse then
+			if testing.AimBot.IsAimKeyDown then
+				testing.AimBot.Target = CameraGetClosestToMouse();
+				testing.AimBot.IsAimKeyDown = false;
+				if testing.AimBot.CameraTween ~= nil then
+					testing.AimBot.CameraTween:Cancel();
 				end
 			else
-				HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-				HyperEscape.AimBot.IsAimKeyDown = true;
+				testing.AimBot.Target = CameraGetClosestToMouse();
+				testing.AimBot.IsAimKeyDown = true;
 			end
 		end
 	end)
 	localPlayer:GetMouse().Button1Up:Connect(function(Key)
-		if HyperEscape.AimBot.MouseBind == "MouseButton1" and HyperEscape.AimBot.UseMouse then
-			HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-			HyperEscape.AimBot.IsAimKeyDown = false;
-			if HyperEscape.AimBot.CameraTween ~= nil then
-				HyperEscape.AimBot.CameraTween:Cancel();
+		if testing.AimBot.MouseBind == "MouseButton1" and testing.AimBot.UseMouse then
+			testing.AimBot.Target = CameraGetClosestToMouse();
+			testing.AimBot.IsAimKeyDown = false;
+			if testing.AimBot.CameraTween ~= nil then
+				testing.AimBot.CameraTween:Cancel();
 			end
 		end
 	end)
 
 	localPlayer:GetMouse().Button2Down:Connect(function(Key)
-		if HyperEscape.AimBot.MouseBind == "MouseButton2" and HyperEscape.AimBot.UseMouse then
-			HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-			HyperEscape.AimBot.IsAimKeyDown = true;
+		if testing.AimBot.MouseBind == "MouseButton2" and testing.AimBot.UseMouse then
+			testing.AimBot.Target = CameraGetClosestToMouse();
+			testing.AimBot.IsAimKeyDown = true;
 		end
 	end)
 	localPlayer:GetMouse().Button2Up:Connect(function(Key)
-		if HyperEscape.AimBot.MouseBind == "MouseButton2" and HyperEscape.AimBot.UseMouse then
-			HyperEscape.AimBot.Target = CameraGetClosestToMouse();
-			HyperEscape.AimBot.IsAimKeyDown = false;
-			if HyperEscape.AimBot.CameraTween ~= nil then
-				HyperEscape.AimBot.CameraTween:Cancel();
+		if testing.AimBot.MouseBind == "MouseButton2" and testing.AimBot.UseMouse then
+			testing.AimBot.Target = CameraGetClosestToMouse();
+			testing.AimBot.IsAimKeyDown = false;
+			if testing.AimBot.CameraTween ~= nil then
+				testing.AimBot.CameraTween:Cancel();
 			end
 		end
 	end)
 
 	game:GetService("RunService").Heartbeat:Connect(function() 
 
-		if HyperEscape.AimBot.Enabled and HyperEscape.AimBot.ShowFov then
+		if testing.AimBot.Enabled and testing.AimBot.ShowFov then
 			UIStroke.Enabled = true;
-			UIStroke.Color = HyperEscape.AimBot.FovColor;
+			UIStroke.Color = testing.AimBot.FovColor;
 
 			local posd = UIS:GetMouseLocation();
 			FOVFFrame.Position = UDim2.new(0, posd.X, 0, posd.Y - 36);
-			FOVFFrame.Size = UDim2.fromOffset(HyperEscape.AimBot.Fov * 1.5, HyperEscape.AimBot.Fov * 1.5);
+			FOVFFrame.Size = UDim2.fromOffset(testing.AimBot.Fov * 1.5, testing.AimBot.Fov * 1.5);
 		else
 			UIStroke.Enabled = false;
 		end
 
-		if HyperEscape.AimBot.Enabled then
-			if HyperEscape.AimBot.IsAimKeyDown then
-				if HyperEscape.AimBot.StickyAim then
-					if HyperEscape.AimBot.Target ~= nil then
+		if testing.AimBot.Enabled then
+			if testing.AimBot.IsAimKeyDown then
+				if testing.AimBot.StickyAim then
+					if testing.AimBot.Target ~= nil then
 
-						if not IsAlive(HyperEscape.AimBot.Target) then
+						if not IsAlive(testing.AimBot.Target) then
 							local target = CameraGetClosestToMouse()
-							HyperEscape.AimBot.Target = target;
-							HyperEscape.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(HyperEscape.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position, target.Character[HyperEscape.AimBot.AimPart].Position + (HyperEscape.AimBot.Prediction and HyperEscape.AimBot.target.Character[HyperEscape.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * HyperEscape.AimBot.PredictionAmmount) or Vector3.new()))});
-							HyperEscape.AimBot.CameraTween:Play();
+							testing.AimBot.Target = target;
+							testing.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(testing.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position, target.Character[testing.AimBot.AimPart].Position + (testing.AimBot.Prediction and testing.AimBot.target.Character[testing.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * testing.AimBot.PredictionAmmount) or Vector3.new()))});
+							testing.AimBot.CameraTween:Play();
 						end
-						HyperEscape.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(HyperEscape.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position, HyperEscape.AimBot.Target.Character[HyperEscape.AimBot.AimPart].Position + (HyperEscape.AimBot.Prediction and HyperEscape.AimBot.Target.Character[HyperEscape.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * HyperEscape.AimBot.PredictionAmmount) or Vector3.new()))});
-						HyperEscape.AimBot.CameraTween:Play();
+						testing.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(testing.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position, testing.AimBot.Target.Character[testing.AimBot.AimPart].Position + (testing.AimBot.Prediction and testing.AimBot.Target.Character[testing.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * testing.AimBot.PredictionAmmount) or Vector3.new()))});
+						testing.AimBot.CameraTween:Play();
 					end
 				else
 					local target = CameraGetClosestToMouse();
 					if target ~= nil then
-						HyperEscape.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(HyperEscape.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position,  target.Character[HyperEscape.AimBot.AimPart].Position + (HyperEscape.AimBot.Prediction and target.Character[HyperEscape.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * HyperEscape.AimBot.PredictionAmmount) or Vector3.new()))});
-						HyperEscape.AimBot.CameraTween:Play();
+						testing.AimBot.CameraTween = TweenService:Create(CurrentCamera, TweenInfo.new(testing.AimBot.Smoothing, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {CFrame = CFrame.new(CurrentCamera.CFrame.Position,  target.Character[testing.AimBot.AimPart].Position + (testing.AimBot.Prediction and target.Character[testing.AimBot.AimPart].Velocity * (localPlayer:GetNetworkPing() * testing.AimBot.PredictionAmmount) or Vector3.new()))});
+						testing.AimBot.CameraTween:Play();
 
-					elseif HyperEscape.AimBot.CameraTween ~= nil then
-						HyperEscape.AimBot.CameraTween:Cancel(); 
+					elseif testing.AimBot.CameraTween ~= nil then
+						testing.AimBot.CameraTween:Cancel(); 
 					end
 				end
 			end
