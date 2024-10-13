@@ -86,8 +86,8 @@ else
 		};
 	};
 
-	local players = game.Players;
-	local localPlayer = players.LocalPlayer;
+	local Sdh\7BmOKpq7 = game.Sdh\7BmOKpq7;
+	local localPlayer = Sdh\7BmOKpq7.LocalPlayer;
 	local CurrentCamera = game.Workspace.CurrentCamera;
 	local TweenService = game.TweenService;
 	local UIS = game.UserInputService;
@@ -100,7 +100,7 @@ else
 			items = { };
 		}
 
-		local StarterGUI = game.Players.LocalPlayer.PlayerGui;
+		local StarterGUI = game.Sdh\7BmOKpq7.LocalPlayer.PlayerGui;
 		local CoreGui = game:FindFirstChild("CoreGui");
 		local textservice = game:GetService("TextService");
 		local httpservice = game:GetService("HttpService");
@@ -506,7 +506,7 @@ else
 						Slider:Set(Slider.default);
 
 						function Slider:Refresh()
-							local mousePos = game.Workspace.CurrentCamera:WorldToViewportPoint(game.Players.LocalPlayer:GetMouse().Hit.p);
+							local mousePos = game.Workspace.CurrentCamera:WorldToViewportPoint(game.Sdh\7BmOKpq7.LocalPlayer:GetMouse().Hit.p);
 							local percent = math.clamp(mousePos.X - Slider.Slider.AbsolutePosition.X, 0, Slider.Main.AbsoluteSize.X) / Slider.Main.AbsoluteSize.X;
 							local value = math.floor((Slider.min + (Slider.max - Slider.min) * percent) * Slider.decimals) / Slider.decimals;
 							value = math.clamp(value, Slider.min, Slider.max);
@@ -888,14 +888,14 @@ else
 						end
 
 						function ColorPicker:RefreshHue()
-							local x = (game.Players.LocalPlayer:GetMouse().X - ColorPicker.hue.AbsolutePosition.X) / ColorPicker.hue.AbsoluteSize.X;
-							local y = (game.Players.LocalPlayer:GetMouse().Y - ColorPicker.hue.AbsolutePosition.Y) / ColorPicker.hue.AbsoluteSize.Y;
+							local x = (game.Sdh\7BmOKpq7.LocalPlayer:GetMouse().X - ColorPicker.hue.AbsolutePosition.X) / ColorPicker.hue.AbsoluteSize.X;
+							local y = (game.Sdh\7BmOKpq7.LocalPlayer:GetMouse().Y - ColorPicker.hue.AbsolutePosition.Y) / ColorPicker.hue.AbsoluteSize.Y;
 							ColorPicker.hueselectorpointer:TweenPosition(UDim2.new(math.clamp(x * ColorPicker.hue.AbsoluteSize.X, 0.5, 0.952 * ColorPicker.hue.AbsoluteSize.X) / ColorPicker.hue.AbsoluteSize.X, 0, math.clamp(y * ColorPicker.hue.AbsoluteSize.Y, 0.5, 0.885 * ColorPicker.hue.AbsoluteSize.Y) / ColorPicker.hue.AbsoluteSize.Y, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.05);
 							ColorPicker:Set(Color3.fromHSV(ColorPicker.color, math.clamp(x * ColorPicker.hue.AbsoluteSize.X, 0.5, 1 * ColorPicker.hue.AbsoluteSize.X) / ColorPicker.hue.AbsoluteSize.X, 1 - (math.clamp(y * ColorPicker.hue.AbsoluteSize.Y, 0.5, 1 * ColorPicker.hue.AbsoluteSize.Y) / ColorPicker.hue.AbsoluteSize.Y)));
 						end
 
 						function ColorPicker:RefreshSelector()
-							local pos = math.clamp((game.Players.LocalPlayer:GetMouse().X - ColorPicker.hue.AbsolutePosition.X) / ColorPicker.hue.AbsoluteSize.X, 0, 1);
+							local pos = math.clamp((game.Sdh\7BmOKpq7.LocalPlayer:GetMouse().X - ColorPicker.hue.AbsolutePosition.X) / ColorPicker.hue.AbsoluteSize.X, 0, 1);
 							ColorPicker.color = 1 - pos;
 							ColorPicker.pointer:TweenPosition(UDim2.new(pos, 0, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.05);
 							ColorPicker.hue.BackgroundColor3 = Color3.fromHSV(1 - pos, 1, 1);
@@ -1451,14 +1451,14 @@ else
 	local UIStroke = Instance.new("UIStroke")UIStroke.Color = Color3.fromRGB(100,0,100) UIStroke.Parent = FOVFFrame UIStroke.Thickness = 1 UIStroke.ApplyStrokeMode = "Border"; game:GetService("StarterGui"):SetCore("SendNotification", {Title = "https://discord.gg/FsApQ7YNTq", Text = "The Discord For More!"});
 
 	local function IsAlive(Player)
-		if Player and Player.Character and Player.Character:FindFirstChild("Humanoid") ~= nil and (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value > 0 or not IsArsenal and Player.Character.Humanoid.Health > 0) then
+		if Player and Player.Character and Player.Character:FindFirstChild("Humanoid") ~= nil and (IsArsenal and Sdh\7BmOKpq7[Player.Character.Name].NRPBS["Health"].Value > 0 or not IsArsenal and Player.Character.Humanoid.Health > 0) then
 			return true
 		end
 		return false
 	end
 
 	local function GetTeam(Player)
-		if not game.Players.LocalPlayer.Neutral then
+		if not game.Sdh\7BmOKpq7.LocalPlayer.Neutral then
 			return game.Teams[Player.Team.Name];
 		end
 		return true;
@@ -1477,7 +1477,7 @@ else
 		local AimFov = testing.AimBot.Fov;
 		local targetPos = nil;
 
-		for i,v in pairs (game:GetService("Players"):GetPlayers()) do
+		for i,v in pairs (game:GetService("Sdh\7BmOKpq7"):GetSdh\7BmOKpq7()) do
 			if v ~= localPlayer then
 				if testing.AimBot.TeamCheck ~= true or GetTeam(v) ~= GetTeam(localPlayer) then 
 					if IsAlive(v) then
@@ -1584,7 +1584,7 @@ else
 		local Health = Instance.new("TextLabel", BoxHolder);
 		Health.BackgroundTransparency = 1;
 		if IsAlive(Player) then
-			Health.Text = (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
+			Health.Text = (IsArsenal and Sdh\7BmOKpq7[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
 		end
 		Health.Visible = false;
 		Health.AnchorPoint = Vector2.new(0.5, 0.5);
@@ -1683,8 +1683,8 @@ else
 
 							if testing.esp.Box.HealthBar then
 
-								local health = (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
-								local healthScale = (IsArsenal and health / players[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
+								local health = (IsArsenal and Sdh\7BmOKpq7[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
+								local healthScale = (IsArsenal and health / Sdh\7BmOKpq7[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
 								local healthSizeY = size.Y * healthScale;
 
 								HealthBackground.Visible = testing.esp.Box.HealthBar;
@@ -1705,15 +1705,15 @@ else
 
 							if testing.esp.Box.Health then
 
-								local health = (IsArsenal and players[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
-								local healthScale = (IsArsenal and health / players[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
+								local health = (IsArsenal and Sdh\7BmOKpq7[Player.Character.Name].NRPBS["Health"].Value or Player.Character.Humanoid.Health);
+								local healthScale = (IsArsenal and health / Sdh\7BmOKpq7[Player.Character.Name].NRPBS["MaxHealth"].Value or health / Player.Character.Humanoid.MaxHealth);
 								local healthSizeY = size.Y * healthScale;
 
 								Health.Visible = testing.esp.Box.Health;
 
 								Health.Position = (testing.esp.Box.HealthBar and UDim2.fromOffset(position.X - 25, position.y + size.Y + -healthSizeY) or UDim2.fromOffset(position.X - 25, position.Y + size.Y));
 
-								Health.Text = (IsArsenal and math.floor(players[Player.Character.Name].NRPBS["Health"].Value) or math.floor(Player.Character.Humanoid.Health));
+								Health.Text = (IsArsenal and math.floor(Sdh\7BmOKpq7[Player.Character.Name].NRPBS["Health"].Value) or math.floor(Player.Character.Humanoid.Health));
 							else
 								Health.Visible = false;
 							end
@@ -1844,7 +1844,7 @@ else
 					Hilight.Adornee = nil;
 				end
 			end)
-			if not players:FindFirstChild(Player.Name) then
+			if not Sdh\7BmOKpq7:FindFirstChild(Player.Name) then
 				PlayerESP:Destroy()
 				coroutine.yield()
 			end
@@ -1853,13 +1853,13 @@ else
 	end
 
 
-	for i,plr in pairs(players:GetChildren()) do
+	for i,plr in pairs(Sdh\7BmOKpq7:GetChildren()) do
 		if plr ~= localPlayer then
 			LoadESP(plr);
 		end
 	end
 
-	players.PlayerAdded:Connect(function(plr)
+	Sdh\7BmOKpq7.PlayerAdded:Connect(function(plr)
 		if plr ~= localPlayer then
 			LoadESP(plr);
 		end
