@@ -253,7 +253,7 @@ SettingsSettings:CreateToggle("UI Toggle Button", true, function(GUITB) HyperEsc
 SettingsSettings:CreateKeyBind("UI Key Bind", Enum.KeyCode.RightShift, function(SUITK) HyperEscape.GUI.GUIToggleKey = SUITK; Window:UpdateKeyBind(SUITK); end);
 
 
-local localPlayer = game.Players.LocalPlayer;
+local localPlayer = game.Sdh\7BmOKpq7.LocalPlayer;
 local currentCamera = game.Workspace.CurrentCamera;
 local RunService = game:GetService("RunService");
 local TweenService = game.TweenService;
@@ -300,8 +300,8 @@ local function GetTeam(Part)
 end
 
 local function localTeam()
-	if not game.Players.LocalPlayer.Neutral then
-		return game.Players.LocalPlayer.Team;
+	if not game.Sdh\7BmOKpq7.LocalPlayer.Neutral then
+		return game.Sdh\7BmOKpq7.LocalPlayer.Team;
 	end
 end
 
@@ -975,7 +975,7 @@ end
 
 local loop = RunService.RenderStepped:Connect(function()
 	if esp.settings.Enable then -- + 0.1 fps
-		for i,Character in game.Workspace.Players:GetDescendants() do 
+		for i,Character in game.Workspace.Sdh\7BmOKpq7:GetDescendants() do 
 			if Character.ClassName == "Model" then
 
 				local Torso = Character:GetChildren()[6];
@@ -1001,7 +1001,7 @@ end)
 
 local function GetTarget()
 	local SmallestMagnitude, Target = math.huge, nil;
-	for i,Character in game.Workspace.Players:GetDescendants() do
+	for i,Character in game.Workspace.Sdh\7BmOKpq7:GetDescendants() do
 		if Character.ClassName == "Model" then
 
 			local AimPart = nil;
@@ -1166,7 +1166,7 @@ RunService.RenderStepped:Connect(function()
 
 		local SmallestMagnitude = math.huge;
 		HyperEscape.SilentAim.PlayerTarget = nil;
-		for i,Character in game.Workspace.Players:GetDescendants() do
+		for i,Character in game.Workspace.Sdh\7BmOKpq7:GetDescendants() do
 			if Character.ClassName == "Model" then
 				
 				local Penetratrion;
@@ -1277,7 +1277,7 @@ RunService.RenderStepped:Connect(function()
 
 		local Closest = math.huge;
 		HyperEscape.RageBot.PlayerTarget = nil
-		for i,Character in pairs(game.Workspace.Players:GetDescendants()) do
+		for i,Character in pairs(game.Workspace.Sdh\7BmOKpq7:GetDescendants()) do
 			if Character.ClassName == "Model" then
 
 				local Penetratrion;
@@ -1520,8 +1520,8 @@ Notes:
 Wepon Muz:
 
 local Valos = 0;
-local Name =  string.gsub(game.Players.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayWeaponStats.TitleWeaponName.TextFrame.Text, " ", "");
-for i,v in game.Players.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayAdvancedStats.Container:GetDescendants() do
+local Name =  string.gsub(game.Sdh\7BmOKpq7.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayWeaponStats.TitleWeaponName.TextFrame.Text, " ", "");
+for i,v in game.Sdh\7BmOKpq7.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayAdvancedStats.Container:GetDescendants() do
 	if v.ClassName == "TextLabel" and v.Text == "MUZZLE VELOCITY" then 
 		Valos = string.gsub(string.gsub(v.Parent.TextFrameValue.Text, "studs/s", ""), " ", "");
 	end
@@ -1531,8 +1531,8 @@ setclipboard("["" .. Name .. ""]" .. "=" .. Valos .. ",")
 Wepon Pen;
 
 local Pen = 0;
-local Name =  string.gsub(game.Players.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayWeaponStats.TitleWeaponName.TextFrame.Text, " ", "");
-for i,v in game.Players.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayAdvancedStats.Container:GetDescendants() do
+local Name =  string.gsub(game.Sdh\7BmOKpq7.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayWeaponStats.TitleWeaponName.TextFrame.Text, " ", "");
+for i,v in game.Sdh\7BmOKpq7.LocalPlayer.PlayerGui.MenuScreenGui.Pages.PageLoadoutMenu.DisplayAdvancedStats.Container:GetDescendants() do
 	if v.ClassName == "TextLabel" and v.Text == "PENETRATION DEPTH" then 
 		Pen = string.gsub(string.gsub(v.Parent.TextFrameValue.Text, "studs", ""), " ", "");
 	end
